@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <data>
+
+        <import type="com.example.databinding.bean.Student" />
+        <import type="android.graphics.Bitmap"/>
+        <import type="java.util.ArrayList"/>
+        <import type="java.util.HashMap"/>
+
+        <variable
+            name="student"
+            type="Student" />
+        
+        <variable
+            name="listPosition"
+            type="int"/>
+
+        <variable
+            name="list"
+            type="ArrayList&lt;String>" />
+
+        <!--<variable-->
+            <!--name="map"-->
+            <!--type="HashMap<String,int>"/>-->
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(student.age)}"
+            android:onClick="ageClick"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[listPosition]}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@{student.subject.sub1}"
+            android:onClick="sub1Click"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@{student.subject.sub2}"
+            android:onClick="sub2Click"/>
+
+    </LinearLayout>
+
+</layout>
